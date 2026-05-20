@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <link rel="stylesheet" href="style.css">
+	<link rel="icon" sizes="57x57" href="favicon.ico">
+</head>
+
+<body>
+
+<!-- ===== SURREAL BACKGROUND ELEMENTS ===== -->
+<div class="mesh-bg"></div>
+
+<div class="floating-orb orb-1"></div>
+<div class="floating-orb orb-2"></div>
+<div class="floating-orb orb-3"></div>
+
+<div class="grain"></div>
+
+<div id="page-transition"></div>
+
+<!-- ===== NAV ===== -->
+<nav>
+
+    <h1>> <span class="terminal">__</span></h1>
+
+    <div>
+        <a href="AboutMe.html">About Me</a>
+        <a href="skills.html">Skills</a>
+		<a href="project.html">Projects</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+
+    <div class="hero-dots">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+    </div>
+
+    <div class="hero-glow"></div>
+
+    <div class="hero-content">
+
+        <div class="hero-badge motion delay-1">
+            FRONTEND • DESIGN • INTERACTIVE SYSTEMS
+        </div>
+
+        <h2 class="motion delay-2">
+            <span id="typing"></span><span class="cursor">|</span>
+        </h2>
+
+        <p class="motion delay-3">
+            Building clean, modern, and interactive systems for you.
+        </p>
+
+        <a href="project.html">
+            <button class="btn motion delay-4">
+                View Work
+            </button>
+        </a>
+
+    </div>
+
+</section>
+
+<!-- ===== PROJECTS ===== -->
+<section>
+
+    <h2 class="section-title">Projects</h2>
+
+    <div class="grid">
+
+        <div class="project-card motion delay-1">
+
+            <div class="image-box">
+                <img src="habittracker.jpg" alt="Project Image">
+            </div>
+
+            <h3>Habit Tracker</h3>
+
+            <p>
+                Gamified productivity system with leveling.
+            </p>
+
+        </div>
+
+        <div class="project-card motion delay-2">
+
+            <div class="image-box">
+                <img src="spendtrails.jpg" alt="Project Image">
+            </div>
+
+            <h3>SpendTrails</h3>
+
+            <p>
+                Expense-tracking system for a better budgeting.
+            </p>
+
+        </div>
+
+        <div class="project-card motion delay-3">
+
+            <div class="image-box">
+                <img src="webdesign.jpg" alt="Project Image">
+            </div>
+
+            <h3>Web Designing</h3>
+
+            <p>
+                Dynamic web designs with animations.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <p>Aquarius © 2026</p>
+</footer>
+
+<!-- ===== TYPING EFFECT ===== -->
+<script>
+const textArray = [
+    "Hello, I'm a Developer.",
+    "I build cool websites.",
+    "I design webpages.",
+    "I love clean code.",
+    "Welcome to my portfolio!"
+];
+
+let index = 0;
+let charIndex = 0;
+let currentText = '';
+let isDeleting = false;
+
+function typeEffect() {
+    const display = document.getElementById("typing");
+    currentText = textArray[index];
+
+    if (!isDeleting) {
+        display.textContent = currentText.substring(0, charIndex++);
+    } else {
+        display.textContent = currentText.substring(0, charIndex--);
+    }
+
+    let speed = isDeleting ? 50 : 100;
+
+    if (!isDeleting && charIndex === currentText.length + 1) {
+        speed = 1500;
+        isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        index = (index + 1) % textArray.length;
+        speed = 500;
+    }
+
+    setTimeout(typeEffect, speed);
+}
+
+typeEffect();
+</script>
+
+<!-- ===== PAGE TRANSITION ===== -->
+<script>
+const transition = document.getElementById("page-transition");
+
+// intercept all links
+document.querySelectorAll("a[href]").forEach(link => {
+    const url = link.getAttribute("href");
+
+    // skip external / anchors
+    if (url.startsWith("#") || url.startsWith("http")) return;
+
+    link.addEventListener("click", function(e) {
+        e.preventDefault();
+
+        transition.classList.add("active");
+        document.body.classList.add("fade-out");
+
+        setTimeout(() => {
+            window.location.href = url;
+        }, 500);
+    });
+});
+
+// remove transition on load
+window.addEventListener("load", () => {
+    transition.classList.remove("active");
+});
+</script>
+
+<!-- ===== INTERSECTION OBSERVER ===== -->
+<script>
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+    });
+}, {
+    threshold: 0.15
+});
+
+document.querySelectorAll(".motion").forEach(el => {
+    observer.observe(el);
+});
+</script>
+
+<!-- ===== NAV SCROLL ===== -->
+<script>
+const nav = document.querySelector("nav");
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 10) {
+        nav.classList.add("scrolled");
+    } else {
+        nav.classList.remove("scrolled");
+    }
+});
+</script>
+
+<!-- ===== MOUSE GLOW ===== -->
+<script>
+document.addEventListener("mousemove", e => {
+    document.body.style.setProperty('--x', e.clientX + 'px');
+    document.body.style.setProperty('--y', e.clientY + 'px');
+});
+</script>
+
+</body>
+</html>

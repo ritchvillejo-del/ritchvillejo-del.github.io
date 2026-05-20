@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="style.css">
+	<link rel="icon" sizes="57x57" href="favicon.ico">
+</head>
+<body>
+<!-- ===== SURREAL BACKGROUND ELEMENTS ===== -->
+<div class="mesh-bg"></div>
+
+<div class="floating-orb orb-1"></div>
+<div class="floating-orb orb-2"></div>
+<div class="floating-orb orb-3"></div>
+
+<div class="grain"></div>
+
+<div id="page-transition"></div>
+<nav>
+	<h1>> <span class="terminal">__</span> </h1>
+    <div>
+        <a href="index.html">Home</a>
+        <a href="AboutMe.html">About Me</a>
+        <a href="skills.html">Skills</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+	<div class="hero-dots">
+				<span class="dot red"></span>
+				<span class="dot yellow"></span>
+				<span class="dot green"></span>
+			</div>
+			 <div class="hero-glow"></div>
+    <div class="hero-content">
+	 <div class="hero-badge motion delay-1">
+            OUTPUT • DESIGN • PRODUCT
+        </div>
+        <h2 class="motion delay-1"><span id="typing"></span><span class="cursor">|</span></h2>
+        <p class="motion delay-2">Real systems I've built using logic, design, and creativity.</p>
+    </div>
+</section>
+    
+<!-- PROJECT GRID -->
+<section class="projects-container">
+
+    <div class="projects-grid">
+
+        <!-- PROJECT 1 -->
+        <div class="project-card motion delay-1">
+            <div class="image-box">
+                <img src="habittracker.jpg" alt="Habit Tracker">
+            </div>
+
+            <h3>Habit Tracker</h3>
+            <p>Build your habit with gamified experience.</p>
+
+            <div class="tags">
+                <span>WinForms</span>
+                <span>C#</span>
+                <span>Gamification</span>
+            </div>
+
+            <div class="buttons">
+                <a href="#"><button>Demo</button></a>
+                <a href="#"><button>Code</button></a>
+            </div>
+        </div>
+
+        <!-- PROJECT 2 -->
+        <div class="project-card motion delay-2">
+            <div class="image-box">
+                <img src="spendtrails.jpg" alt="SpendTrails">
+            </div>
+
+            <h3>SpendTrails</h3>
+            <p>Expense tracking system for better financial decisions.</p>
+
+            <div class="tags">
+                <span>Java</span>
+                <span>Finance</span>
+                <span>System</span>
+            </div>
+
+            <div class="buttons">
+                <a href="#"><button>Demo</button></a>
+                <a href="#"><button>Code</button></a>
+            </div>
+        </div>
+
+        <!-- PROJECT 3 -->
+        <div class="project-card motion delay-3">
+            <div class="image-box">
+                <img src="webdesign.jpg" alt="Web Design">
+            </div>
+
+            <h3>Web Designing</h3>
+            <p>Modern responsive UI designs with stunning animations and effects.</p>
+
+            <div class="tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+            </div>
+
+            <div class="buttons">
+                <a href="#"><button>Demo</button></a>
+                <a href="#"><button>Code</button></a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>Aquarius © 2026</p>
+</footer>
+<script>
+const textArray = [
+    "Product.",
+    "Design.",
+	"Output.",
+    "Projects.",
+   
+];
+
+let index = 0;
+let charIndex = 0;
+let currentText = '';
+let isDeleting = false;
+
+function typeEffect() {
+    const display = document.getElementById("typing");
+    currentText = textArray[index];
+
+    if (!isDeleting) {
+        display.textContent = currentText.substring(0, charIndex++);
+    } else {
+        display.textContent = currentText.substring(0, charIndex--);
+    }
+
+    let speed = isDeleting ? 50 : 100;
+
+    if (!isDeleting && charIndex === currentText.length + 1) {
+        speed = 1500;
+        isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        index = (index + 1) % textArray.length;
+        speed = 500;
+    }
+
+    setTimeout(typeEffect, speed);
+}
+
+typeEffect();
+</script>
+<script>
+// smooth page enter
+document.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("page-enter");
+
+    requestAnimationFrame(() => {
+        document.body.style.opacity = "1";
+        document.body.style.transform = "translateY(0)";
+    });
+});
+
+// smooth page exit
+document.querySelectorAll("a[href]").forEach(link => {
+    const url = link.getAttribute("href");
+
+    if (url.startsWith("#") || url.startsWith("http")) return;
+
+    link.addEventListener("click", function(e) {
+        e.preventDefault();
+
+        document.body.classList.add("page-exit");
+
+        setTimeout(() => {
+            window.location.href = url;
+        }, 300);
+    });
+});
+</script>
+<script>
+// intersection observer (like Framer Motion viewport)
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+    });
+}, {
+    threshold: 0.15
+});
+
+// apply to all motion elements
+document.querySelectorAll(".motion").forEach(el => {
+    observer.observe(el);
+});
+</script>
+<script>
+const nav = document.querySelector("nav");
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 10) {
+        nav.classList.add("scrolled");
+    } else {
+        nav.classList.remove("scrolled");
+    }
+});
+</script>
+</body>
+</html>
