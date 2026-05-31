@@ -1,0 +1,12 @@
+{
+  "name": "aquarius-va-portfolio",
+  "version": "1.0.0",
+  "description": "One-page VA portfolio with contact form backend.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Ritch Anthony M. Villejo</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" sizes="57x57" href="favicon.ico" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="preloader" aria-hidden="true">
+    <div class="preloader-inner">
+      <span>Loading...</span>
+      <div class="load-line"><i></i></div>
+      <small>Building your workspace</small>
+    </div>
+  </div>
+
+  <div class="tech-bg" aria-hidden="true">
+    <span class="data-grid"></span>
+    <span class="scanline"></span>
+    <span class="circuit circuit-one"></span>
+    <span class="circuit circuit-two"></span>
+    <span class="circuit circuit-three"></span>
+    <span class="orb orb-one"></span>
+    <span class="orb orb-two"></span>
+    <span class="geo-shape shape-one"></span>
+    <span class="geo-shape shape-two"></span>
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Go to home">
+      <span class="brand-mark">V</span>
+      <span>Villejo</span>
+    </a>
+
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero section-panel">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Virtual Assistance • Web Systems • Client Operations</p>
+        <h1>
+          I help clients stay organized, visible, and ready to grow.
+          <span class="animated-line"><span id="typing"></span><span class="cursor">|</span></span>
+        </h1>
+        <p class="hero-text">
+          I’m Ritch Anthony M. Villejo, a virtual assistant and aspiring developer who builds clean workflows, polished digital pages, and practical systems for busy clients.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#projects">View Work</a>
+          <a class="btn ghost" href="#contact">Hire Me</a>
+        </div>
+      </div>
+
+      <div class="hero-stage reveal delay-1">
+        <div class="profile-card tilt-card">
+          <div class="dashboard-topline"></div>
+          <div class="geo-ring"></div>
+          <img src="profile.png" alt="Ritch Anthony M. Villejo profile photo" />
+          <div class="status-pill">Available for VA and web support</div>
+        </div>
+        <div class="floating-card card-one">Inbox Support</div>
+        <div class="floating-card card-two">CRM Updates</div>
+        <div class="floating-card card-three">Web Design</div>
+      </div>
+    </section>
+
+    <section id="about" class="content-section about-section">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Principles • Purpose • Vision</p>
+        <h2>About Me</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-image reveal">
+          <img src="profile.png" alt="Profile portrait" />
+        </div>
+        <div class="about-copy reveal delay-1">
+          <h3>Hello there.</h3>
+          <p>
+            I’m Ritch Anthony M. Villejo, an aspiring developer and virtual assistant focused on clean work, reliable systems, and clear communication.
+          </p>
+          <p>
+            My interest in web technologies started from curiosity and grew into a passion for building interactive pages, organized workflows, and user-focused digital experiences.
+          </p>
+          <p>
+            I value clean UI, logical structure, client trust, and continuous improvement through modern development and support practices.
+          </p>
+
+          <div class="info-grid">
+            <article>
+              <span>Focus</span>
+              <strong>Virtual Assistance, Web Development, Systems, and Design</strong>
+            </article>
+            <article>
+              <span>Strength</span>
+              <strong>Clean UI, Client Support, Logic, and Integration</strong>
+            </article>
+            <article>
+              <span>Goal</span>
+              <strong>Help clients save time and build better digital operations</strong>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="content-section">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Support • Systems • Digital Execution</p>
+        <h2>Skills</h2>
+      </div>
+
+      <div class="skills-grid">
+        <article class="skill-card reveal" data-level="85">
+          <div><h3>Virtual Assistance</h3><p>Admin support, client communication, task tracking</p></div>
+          <span class="skill-number">85%</span>
+          <div class="meter"><i></i></div>
+        </article>
+        <article class="skill-card reveal delay-1" data-level="70">
+          <div><h3>Frontend</h3><p>HTML, CSS, JavaScript</p></div>
+          <span class="skill-number">70%</span>
+          <div class="meter"><i></i></div>
+        </article>
+        <article class="skill-card reveal delay-2" data-level="67">
+          <div><h3>Basic Programming</h3><p>C#, Java</p></div>
+          <span class="skill-number">67%</span>
+          <div class="meter"><i></i></div>
+        </article>
+        <article class="skill-card reveal delay-3" data-level="51">
+          <div><h3>UI/UX</h3><p>WinForms, layout, responsive page concepts</p></div>
+          <span class="skill-number">51%</span>
+          <div class="meter"><i></i></div>
+        </article>
+        <article class="skill-card reveal delay-4" data-level="85">
+          <div><h3>Tools</h3><p>Git, VS Code, debugging, file organization</p></div>
+          <span class="skill-number">85%</span>
+          <div class="meter"><i></i></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects" class="content-section projects-section">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Output • Design • Product</p>
+        <h2>Projects</h2>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card reveal">
+          <img src="habittracker.jpg" alt="Habit Tracker project preview" />
+          <div class="project-body">
+            <p class="project-index">01</p>
+            <h3>Habit Tracker</h3>
+            <p>Gamified productivity system built to help users stay consistent and track daily progress.</p>
+            <div class="tags"><span>WinForms</span><span>C#</span><span>Productivity</span></div>
+            <div class="project-links"><a href="#contact">Request Demo</a><a href="#contact">Ask for Code</a></div>
+          </div>
+        </article>
+
+        <article class="project-card reveal delay-1">
+          <img src="spendtrails.jpg" alt="SpendTrails project preview" />
+          <div class="project-body">
+            <p class="project-index">02</p>
+            <h3>SpendTrails</h3>
+            <p>Expense-tracking system designed to support better budgeting, reporting, and decision-making.</p>
+            <div class="tags"><span>Java</span><span>Finance</span><span>System</span></div>
+            <div class="project-links"><a href="#contact">Request Demo</a><a href="#contact">Ask for Code</a></div>
+          </div>
+        </article>
+
+        <article class="project-card reveal delay-2">
+          <img src="webdesign.jpg" alt="Web design project preview" />
+          <div class="project-body">
+            <p class="project-index">03</p>
+            <h3>Web Designing</h3>
+            <p>Modern responsive web designs with structure, motion, and polished visual direction for clients.</p>
+            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+            <div class="project-links"><a href="#contact">Request Demo</a><a href="#contact">Ask for Code</a></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="education" class="content-section education-section">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Growth • Training • Direction</p>
+        <h2>Education</h2>
+      </div>
+
+      <div class="timeline">
+        <article class="timeline-item reveal">
+          <span>2013 - 2019</span>
+          <h3>Primary School, Manukan East Central School</h3>
+          <p>Built the foundation for basic education and moral conduct.</p>
+        </article>
+        <article class="timeline-item reveal delay-1">
+          <span>2019 - 2023</span>
+          <h3>Junior High School, Sisters of Mary School-Boystown, Inc.</h3>
+          <p>Developed early discipline, direction, and self-actualization.</p>
+        </article>
+        <article class="timeline-item reveal delay-2">
+          <span>2024 - 2025</span>
+          <h3>Senior High School, Sisters of Mary School-Boystown, Inc.</h3>
+          <p>Focused on industrial arts and real-world practice.</p>
+        </article>
+        <article class="timeline-item reveal delay-3">
+          <span>2025 - 2026</span>
+          <h3>Tertiary Education, Dipolog Medical Center College Foundation, Inc.</h3>
+          <p>Specialized in basic programming and web structures.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="content-section contact-section">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Communicate • Link • Connect</p>
+        <h2>Contact</h2>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card reveal">
+          <h3>Get in touch</h3>
+          <p><strong>Phone:</strong> +63 910 025 5866</p>
+          <p><strong>Email:</strong> <a href="mailto:ritch_villejo@dmc.edu.ph">ritch_villejo@dmc.edu.ph</a></p>
+          <p><strong>Location:</strong> Dipolog City, Zamboanga del Norte, Philippines</p>
+          <div class="socials">
+            <a href="https://github.com/ritchvillejo-del" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://www.instagram.com/ritchanthony.villejo/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.facebook.com/ritchanthony.villejo.7" target="_blank" rel="noopener">Facebook</a>
+          </div>
+        </div>
+
+        <form class="contact-form reveal delay-1" id="contactForm" action="/api/contact" method="POST">
+          <label>Your Name<input type="text" name="name" placeholder="Enter your name" required /></label>
+          <label>Your Email<input type="email" name="email" placeholder="Enter your email" required /></label>
+          <label>Your Message<textarea name="message" rows="5" placeholder="Tell me what support you need" required></textarea></label>
+          <button class="btn primary" type="submit">Send Message</button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Villejo © 2026. Digital systems portfolio.</p>
+  </footer>
+</body>
+</html>
