@@ -1,0 +1,16 @@
+{
+  "name": "ritch-villejo-portfolio-autodude",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Creative portfolio focused on Auto Dude video editing, WordPress, SEO, and GoHighLevel automation.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
