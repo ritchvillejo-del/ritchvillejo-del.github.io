@@ -1,0 +1,19 @@
+{
+  "name": "ritch-villejo-ghl-specialist-portfolio",
+  "version": "4.0.0",
+  "private": true,
+  "description": "GoHighLevel specialist portfolio with CRM workflow case studies, embedded video work, and a Node.js contact backend.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "check": "node --check server.js && node --check script.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
+  }
+}
